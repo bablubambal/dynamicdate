@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Date & time </title>
+<style type="text/css">
+	body{
+		background-color: grey;
+
+	}
+	h1{
+		font-size: 54px;
+		text-align: center;
+		margin-top: 200px;
+		font-family: sans-serif;
+	}
+
+</style>
+</head>
+<body>
+
+<h1 id="time"></h1>
+
+<script type="text/javascript">
+
+setInterval(function(){ 
+var d = new Date();
+var day = d.getDay();
+var hr = d.getHours();
+var min = d.getMinutes();
+var sec = d.getSeconds();
+if (min < 10) {
+    min = "0" + min;
+}
+var ampm = "am";
+if( hr > 12 ) {
+    hr -= 12;
+    ampm = "pm";
+}
+
+//document.write(sec);
+var date = d.getDate();
+var month = d.getMonth();
+var year = d.getFullYear();
+var x = document.getElementById("time");
+// + date + " " + month + " " + year;
+x.innerHTML =   hr + ":" + min+ ":" + sec + " : " + ampm + " ";
+
+
+ }, 1000);
+</script>
+</body>
+</html>
